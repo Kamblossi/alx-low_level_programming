@@ -1,51 +1,32 @@
 #include "main.h"
+
 /**
-  * _length - checks the length of a string
-  * @s: is the string
-  * Return: gives the length of the string
-**/
-int _length(char *s)
+ * checkp - helper function to check if a string is a palindrome
+ * @s: string to check
+ * @len: length of the string
+ * @i: iterator
+ * Return: 1 if palindrome, 0 if not
+ */
+int checkp(char *s, int len, int i)
 {
-	if (*s == '\0')
-		return (0);
-	return (1 + _length(s + 1));
+    if (s[i] != s[len - i - 1])
+        return (0);
+    if (i >= len / 2)
+        return (1);
+    return (checkp(s, len, i + 1));
 }
 
 /**
- * checkp - checks if the string is palindrome
- * @i: is the index
- * @le: is the length of the string
- * @s: is the string
- * Return: 1 if is polindrome or 0 if not
-**/
-int checkp(int i, int le, char *s)
-{
-	if (lg > 0)
-	{
-		if (s[i] == s[le])
-		{
-			return (checkp(i + 1, le - 1, s));
-		}
-		else if (s[i] != s[le])
-		{
-			return (0);
-		}
-		else
-		{
-			return (1);
-		}
-	}
-	return (1);
-}
-
-
-/**
-  * is_palindrome - Checks if a string is a palindrome
-  * @s: is the string
-  * Return: return 1 if the string is a palindrome or 0 otherwise
-**/
+ * is_palindrome - checks if a string is a palindrome
+ * @s: string to check
+ * Return: 1 if palindrome, 0 if not
+ */
 int is_palindrome(char *s)
 {
-	return (checkp(0, _length(s) - 1, s));
-}
+    int len = 0;
 
+    while (s[len] != '\0')
+        len++;
+
+    return checkp(s, len, 0);
+}
