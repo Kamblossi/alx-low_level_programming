@@ -2,13 +2,13 @@
 #include <stdlib.h>
 
 /**
- *  * _change - Count the minimum number of coins to make change
- *   * for an amount of money.
- *    * @num: Amount.
- *     * @mod: Array of coins.
- *      * @size: Size of array.
- *       * Return: The minimum number of coins.
- *        */
+ *_change - Count the minimum number of coins to make change
+ *for an amount of money.
+ *@num: Amount.
+ *@mod: Array of coins.
+ *@size: Size of array.
+ *Return: The minimum number of coins.
+ */
 
 int _change(int num, int *mod, int size)
 {
@@ -19,11 +19,11 @@ int _change(int num, int *mod, int size)
 }
 
 /**
- *  * main - Print the change for an amount of money.
- *   * @argc: Number of arguments.
- *    * @argv: Array of arguments.
- *     * Return: 0 is succes.
- *      */
+ *main - Print the change for an amount of money.
+ *@argc: Number of arguments.
+ *@argv: Array of arguments.
+ *Return: 0 is succes.
+ */
 int main(int argc, char *argv[])
 {
 		int num, size, c_amount;
